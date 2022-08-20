@@ -69,19 +69,18 @@ You Created. --> Save.
 
 # 6) create an S3 bucket Execute below commond in KOPS Server use unique bucket name if you get bucket name exists error.
 
-	aws s3 mb s3://myhanstech_bucket.k8s
+	aws s3 mb s3://myhanstech.bucket.k8s
 	aws s3 ls
 	
-    ex: s3://nubong.k8s.local
-     
+    
 	Expose environment variable:
 
     # Add env variables in bashrc
     vi .bashrc
 	
 	# Give Unique Name And S3 Bucket which you created.
-	export NAME=hanstech.k8s.local
-	export KOPS_STATE_STORE=s3://myhanstech_bucket.k8s
+	export NAME=hanstech.k8s.local               =====> Name of the cluster
+	export KOPS_STATE_STORE=s3://myhanstech.bucket.k8s
  
     source .bashrc
 	
