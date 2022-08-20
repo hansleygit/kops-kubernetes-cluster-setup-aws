@@ -37,6 +37,7 @@
  sudo apt install unzip python -y
  sudo unzip awscli-bundle.zip
  sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+ sudo apt install awscli -y
  ```
  
 # 3) Install kops software on ubuntu instance:
