@@ -92,12 +92,13 @@ You Created. --> Save.
 
 # 8) Create kubernetes cluster definitions on S3 bucket
 
-	kops create cluster --zones us-east-1a --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME}
+	kops create cluster --zones us-east-2a --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME}
 	
 	kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
 
 # 9) Create kubernetes cluser
 
+kops create secret --name ${NAME} --yes
 	  
 
 # 10) Validate your cluster(KOPS will take some time to create cluster ,Execute below commond after 3 or 4 mins)
