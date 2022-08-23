@@ -98,7 +98,7 @@ You Created. --> Save.
 
 # 9) Create kubernetes cluser
 
-kops create secret --name ${NAME} --yes
+kops update cluster ${NAME} --yes
 	  
 
 # 10) Validate your cluster(KOPS will take some time to create cluster ,Execute below commond after 3 or 4 mins)
