@@ -100,6 +100,7 @@ You Created. --> Save.
 
 kops update cluster ${NAME} --yes
 	  
+sudo chown jenkins /var/run/docker.sock
 
 # 10) Validate your cluster(KOPS will take some time to create cluster ,Execute below commond after 3 or 4 mins)
 
