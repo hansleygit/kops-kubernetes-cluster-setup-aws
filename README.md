@@ -23,7 +23,7 @@
 # 1) Create Ubuntu EC2 instance in AWS
 
 # 2a) create kops user
-`` sh
+
  sudo adduser kops
  sudo echo "kops  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/kops
  sudo su - kops
@@ -70,7 +70,7 @@ You Created. --> Save.
 
 # 6) create an S3 bucket Execute below commond in KOPS Server use unique bucket name if you get bucket name exists error.
 
-	aws s3 mb s3://myhanstech.bucket.k8s
+	aws s3 mb s3://myhanstech.bucket.k8s.local
 	aws s3 ls
 	
     
@@ -81,7 +81,7 @@ You Created. --> Save.
 	
 	# Give Unique Name And S3 Bucket which you created.
 	export NAME=hanstech.k8s.local               =====> Name of the cluster
-	export KOPS_STATE_STORE=s3://myhanstech.bucket.k8s
+	export KOPS_STATE_STORE=s3://myhanstech.bucket.k8s.local
  
     source .bashrc
 	
@@ -92,7 +92,7 @@ You Created. --> Save.
 
 # 8) Create kubernetes cluster definitions on S3 bucket
 
-	kops create cluster --zones us-east-2a --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME}
+	kops create cluster --zones us-west-2a --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME}
 	
 	kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
 
